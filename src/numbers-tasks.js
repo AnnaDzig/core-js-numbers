@@ -129,10 +129,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  if (Math.abs(value) < 10) {
-    return Math.abs(value);
-  }
-  return getLastDigit(value % 10);
+  return Math.abs(value % 10);
 }
 
 /**
@@ -164,9 +161,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(a, b, c) {
-  const sumOfSquares = a ** 2 + b ** 2 + c ** 2;
-  const diagonal = Math.sqrt(sumOfSquares);
-  return diagonal;
+  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
 
 /**
@@ -574,7 +569,7 @@ function getIntegerPartNumber(number) {
  * 0.1, 0.2, 0.3 => 0.6
  */
 function getSumOfNumbers(x1, x2, x3) {
-  return (x1 + x2 + x3).toFixed(10);
+  return Number((x1 + x2 + x3).toFixed(10));
 }
 
 /**
