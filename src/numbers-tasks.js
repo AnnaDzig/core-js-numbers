@@ -261,24 +261,11 @@ function getCube(num) {
  *   10 => 55
  */
 function getFibonacciNumber(index) {
-  if (typeof index !== 'number' || index < 0 || !Number.isFinite(index)) {
-    return NaN;
-  }
+  if (!Number.isInteger(index) || index < 0) return NaN;
+  if (index < 2) return index;
 
-  const n = Math.floor(index);
-
-  if (n === 0) return 0;
-  if (n === 1) return 1;
-
-  let a = 0;
-  let b = 1;
-
-  for (let i = 2; i <= n; i += 1) {
-    const next = a + b;
-    a = b;
-    b = next;
-  }
-
+  let [a, b] = [0, 1];
+  for (let i = 2; i <= index; i += 1) [a, b] = [b, a + b];
   return b;
 }
 
